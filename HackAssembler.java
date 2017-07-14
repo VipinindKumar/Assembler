@@ -14,13 +14,25 @@ public class HackAssembler {
     // write it into output file
     public static void main(String[] args) {
         // read the file
-        File infile = new File(args[0]);
-		BufferedReader br = new BufferedReader(new FileReader(file));
+		BufferedReader in = new BufferedReader(new FileReader(new File(args[0])));
 		
+        // write it into output file
+		String outfile = args[0].split(".")[0] + ".hack";
+        BufferedWriter out = new BufferedWriter(new FileWriter(new File(outfile)));
+        
 		// in a loop read an instruction
 		String inst;
-		while((inst = br.readLine()) != null) {
-		    
+		while ((inst = in.readLine()) != null) {
+		    Parser parser = new Parser(inst);
+		    if (parser.isInstruction()) {
+		        // convert it into binary
+    		    inst = parser.binary();
+    		    // write it into output file
+    		    out.write(inst);
+    		    out.newLine();
+		    }
 		}
+		in.close();
+		out.close();
     }
 }
