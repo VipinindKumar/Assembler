@@ -11,12 +11,17 @@ public class Parser {
     
     // Initializes with an instruction 
     public Parser(String inst) {
-        
+        this.instruction = inst;
     }
     
     // check if it's an instruction(not white space or comment)
     public boolean isInstruction() {
-        
+        if (instruction == null || instruction.isEmpty())
+            return false;
+        else if (instruction[0] == "/" && instruction[1] == "/")
+            return false;
+        else 
+            return true;
     }
     
     // convert the instruction into it's corresponding binary code
