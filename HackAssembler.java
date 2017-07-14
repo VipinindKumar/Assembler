@@ -26,10 +26,10 @@ public class HackAssembler {
             Parser parser = new Parser(inst);
             if (parser.isInstruction()) {
                 // convert it into binary
-        	    inst = parser.binary();
-        	    // write it into output file
-        	    out.write(inst);
-        	    out.newLine();
+                inst = parser.binary();
+                // write it into output file
+                out.write(inst);
+                out.newLine();
             }
         }
         in.close();
