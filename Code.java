@@ -7,5 +7,19 @@
  **/
  
 public class Code {
+    public String comp(String comp) {
+        
+    }
     
+    public String dest(String dest) {
+        
+    }
+    
+    public String jump(String jump) {
+        
+    }
+    
+    public String aInstruction(String ainst) {
+        
+    }
 }
