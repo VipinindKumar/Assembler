@@ -8,5 +8,17 @@
  **/
 
 public class HackAssembler {
+    public String file;
     
+    public HackAssembler(String f) {
+        this.file = f;
+        // read the file and
+        // in a loop read a instruction
+        // convert it into binary
+        // write it into output file
+    }
+    
+    public static void main(String[] args) {
+        
+    }
 }
