@@ -14,7 +14,7 @@ public class HackAssembler {
     // write it into output file
     public static void main(String[] args) {
         // read the file
-		BufferedReader in = new BufferedReader(new FileReader(new File(args[0])));
+        BufferedReader in = new BufferedReader(new FileReader(new File(args[0])));
 		
         // write it into output file
 		String outfile = args[0].split(".")[0] + ".hack";
