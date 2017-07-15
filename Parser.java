@@ -30,6 +30,8 @@ public class Parser {
     }
     
     // return the A-instruction's part to be converted
+    // convert symbols into corresponding number
+    // boolean a = ainst.chars().allMatch(Character::isLetter);
     public String aInstruction() {
         
     }

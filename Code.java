@@ -89,6 +89,22 @@ public class Code {
      * binary of the decimal number
      */
     public String aInstruction(String ainst) {
-        
+        return intToBinary(Integer.parseInt(ainst));
+    }
+    
+    // Convert an int to its 15bit binary form
+    private String intToBinary (int n) {
+        String binary = "";
+        for(int i = 0; i < 15; i++, n/=2) {
+          switch (n % 2) {
+             case 0:
+                binary = "0" + binary;
+                break;
+             case 1:
+                binary = "1" + binary;
+                break;
+            }
+        }
+        return binary;
     }
 }
