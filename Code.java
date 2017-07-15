@@ -8,9 +8,12 @@
  import java.util.*;
  
 public class Code {
+    Map c = new HashMap();
+    Map d = new HashMap();
+    Map j = new HashMap();
+    
     public Code() {
         // comp table
-        Map c = new HashMap();
         c.put("0",   "0101010");
         c.put("1",   "0111111");
         c.put("-1",  "0111010");
@@ -41,7 +44,6 @@ public class Code {
         c.put("D|M", "1010101");
         
         //dest table
-        Map d = new HashMap();
         d.put("M",   "001");
         d.put("D",   "010");
         d.put("MD",  "011");
@@ -51,7 +53,6 @@ public class Code {
         d.put("AMD", "111");
         
         // jump table
-        Map j = new HashMap();
         j.put("JGT", "001");
         j.put("JEQ", "010");
         j.put("JGE", "011");
@@ -61,18 +62,32 @@ public class Code {
         j.put("JMP", "111");
     }
     
+    /** comp cannot be null here, if it is
+     * then that means instruction parsing
+     * is not correct
+     */
     public String comp(String comp) {
-        
+        if (comp == null) throw NullPointerException();
+        return c.get(comp);
     }
     
+    /** If either of dest and jump is null
+     * it returns "000" 
+     */
     public String dest(String dest) {
-        
+        if (dest == null) return "000"
+        return d.get(dest);
     }
     
     public String jump(String jump) {
-        
+        if (jump == null) return "000"
+        return j.get(jump);
     }
     
+    /** If ainst is a symbol we return its value 
+     * from symbol table as binary else just return
+     * binary of the decimal number
+     */
     public String aInstruction(String ainst) {
         
     }
