@@ -51,6 +51,8 @@ public class Symbol {
     }
     
     // translate a symbol into memory address
+    // if symbol is not present add it and 
+    // then return memory address
     public String read(String symbol) {
         String sym = s.get(symbol);
         if (sym == null) {
