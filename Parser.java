@@ -8,10 +8,12 @@
  
 public class Parser {
     public String instruction;
+    public Symbol st = new Symbol();
+    public Code code = new Code();
     
     // Initializes with an instruction 
     public Parser(String inst) {
-        this.instruction = inst;
+        this.instruction = inst.replaceAll(" ", "");
     }
     
     // check if it's an instruction(not white space or comment)
@@ -26,14 +28,28 @@ public class Parser {
     
     // convert the instruction into it's corresponding binary code
     public String binary() {
-        
+        if (instruction[0] == "@") {
+            // then its an A-instruction
+            
+        }
+        else if (instruction[0] == "(") {
+            // Label
+        }
+        else {
+            // C-instruction
+        }
     }
     
     // return the A-instruction's part to be converted
     // convert symbols into corresponding number
     // boolean a = ainst.chars().allMatch(Character::isLetter);
     public String aInstruction() {
+        String ainst = instruction.split("@")[0];
         
+        // if there is a Symbol
+        if (ainst.chars().allMatch(Character::isLetter)) {
+            
+        }
     }
     
     // return comp field

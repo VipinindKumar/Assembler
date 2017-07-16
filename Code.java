@@ -5,7 +5,7 @@
  * for that field
  * 
  **/
- import java.util.*;
+ import java.util.HashMap;
  
 public class Code {
     public Map c = new HashMap();

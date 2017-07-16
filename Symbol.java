@@ -6,6 +6,7 @@
  * -method to check the value for a particular key
  * 
  **/
+ import java.util.HashMap;
  
 public class Symbol {
     public Map s = new HashMap();
