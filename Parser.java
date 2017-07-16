@@ -26,11 +26,20 @@ public class Parser {
             return true;
     }
     
+    // check if the instruction is a Label
+    public boolean isLabel() {
+        //String label = instruction.trim().split("(")[0].split(")")[0];
+        if (instruction.trim()[0] == "(") {
+            return true;
+        }
+        return false;
+    }
+    
     // convert the instruction into it's corresponding binary code
     public String binary() {
         if (instruction[0] == "@") {
             // then its an A-instruction
-            
+            return aInstruction();
         }
         else if (instruction[0] == "(") {
             // Label

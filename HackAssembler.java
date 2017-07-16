@@ -22,6 +22,19 @@ public class HackAssembler {
         
         // in a loop read an instruction
         String inst;
+        // first pass to record all the Labels in Symbol table
+        BufferedReader in1 = new BufferedReader(new FileReader(new File(args[0])));
+        while ((inst = in1.readLine()) != null) {
+            Parser parser = new Parser(inst);
+            if (parser.isInstruction()) {
+                // convert it into binary
+                inst = parser.binary();
+                // write it into output file
+                out.write(inst);
+                out.newLine();
+            }
+        }
+        
         while ((inst = in.readLine()) != null) {
             Parser parser = new Parser(inst);
             if (parser.isInstruction()) {
