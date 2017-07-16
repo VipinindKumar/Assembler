@@ -84,8 +84,7 @@ public class Code {
         return j.get(jump);
     }
     
-    /** If ainst is a symbol we return its value 
-     * from symbol table as binary else just return
+    /** just return
      * binary of the decimal number
      */
     public String aInstruction(String ainst) {

@@ -47,10 +47,12 @@ public class Parser {
         String a;
         String ainst = instruction.split("@")[0];
         
-        // if there is a Symbol
+        // if it is a Symbol
         if (ainst.chars().allMatch(Character::isLetter)) {
-            Symbol.read(ainst)
+            ainst = Symbol.read(ainst);
         }
+        
+        return code.aInstruction(ainst);
     }
     
     // return comp field
