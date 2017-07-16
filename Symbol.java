@@ -9,6 +9,7 @@
  
 public class Symbol {
     public Map s = new HashMap();
+    private int n = 16;
     
     public Symbol() {
         s.put("SP",         "0");
@@ -34,5 +35,22 @@ public class Symbol {
         s.put("R15",       "15");
         s.put("SCREEN", "16384");
         s.put("KBD",    "24576");
+    }
+    
+    // add variable to symbol tabel
+    public void addvar(String var) {
+        s.put(var, String.valueOf(n));
+        n++;
+    }
+    
+    // add the label, 
+    // @param label name and next instruction number (when in memory)
+    public void addLabel(String label, int nextInst) {
+        s.put(label, String.valueOf(nextInst))
+    }
+    
+    //
+    public String read(String symbol) {
+        return s.get(symbol);
     }
 }
