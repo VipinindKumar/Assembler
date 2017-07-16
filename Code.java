@@ -8,9 +8,9 @@
  import java.util.*;
  
 public class Code {
-    Map c = new HashMap();
-    Map d = new HashMap();
-    Map j = new HashMap();
+    public Map c = new HashMap();
+    public Map d = new HashMap();
+    public Map j = new HashMap();
     
     public Code() {
         // comp table

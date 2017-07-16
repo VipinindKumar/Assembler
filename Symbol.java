@@ -8,5 +8,7 @@
  **/
  
 public class Symbol {
+    public Map s = new HashMap();
+    
     
 }
