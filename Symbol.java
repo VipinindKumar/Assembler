@@ -49,7 +49,7 @@ public class Symbol {
         s.put(label, String.valueOf(nextInst))
     }
     
-    //
+    // translate a symbol into memory address
     public String read(String symbol) {
         return s.get(symbol);
     }
