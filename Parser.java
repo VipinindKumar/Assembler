@@ -44,11 +44,12 @@ public class Parser {
     // convert symbols into corresponding number
     // boolean a = ainst.chars().allMatch(Character::isLetter);
     public String aInstruction() {
+        String a;
         String ainst = instruction.split("@")[0];
         
         // if there is a Symbol
         if (ainst.chars().allMatch(Character::isLetter)) {
-            
+            Symbol.read(ainst)
         }
     }
     

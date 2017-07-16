@@ -52,6 +52,11 @@ public class Symbol {
     
     // translate a symbol into memory address
     public String read(String symbol) {
-        return s.get(symbol);
+        String sym = s.get(symbol);
+        if (sym == null) {
+            addvar(symbol);
+            sym = s.get(symbol);
+        }
+        return sym;
     }
 }
