@@ -60,7 +60,6 @@ public class Parser {
     // convert symbols into corresponding number
     // boolean a = ainst.chars().allMatch(Character::isLetter);
     public String aInstruction() {
-        String a;
         String ainst = instruction.split("@")[0];
         
         // if it is a Symbol then get its address
@@ -79,11 +78,19 @@ public class Parser {
     
     // return dest field
     public String dest() {
-        
+        if(instruction.contains("=")) {
+            String de = instruction.split("=")[0];
+            return code.dest(de);
+        }
+        return "000";
     }
     
     // return jump field
     public String jump() {
-        
+        if(instruction.contains(";")) {
+            String ju = instruction.split(";")[1];
+            return code.jump(ju);
+        }
+        return "000";
     }
 }
