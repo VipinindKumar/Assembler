@@ -8,6 +8,8 @@
  **/
 
 public class HackAssembler {
+    public Symbol st = new Symbol();
+    
     // read the file and
     // in a loop read a instruction
     // convert it into binary
@@ -22,21 +24,27 @@ public class HackAssembler {
         
         // in a loop read an instruction
         String inst;
+        
+        
         // first pass to record all the Labels in Symbol table
         BufferedReader in1 = new BufferedReader(new FileReader(new File(args[0])));
+        // integer for keeping count of no. of instructions
+        int n = 0;
         while ((inst = in1.readLine()) != null) {
-            Parser parser = new Parser(inst);
+            Parser parser = new Parser(inst, st);
             if (parser.isInstruction()) {
-                // convert it into binary
-                inst = parser.binary();
-                // write it into output file
-                out.write(inst);
-                out.newLine();
+                n++;
+                if (parser.isLabel()) {
+                    st.addLabel(parser.label(), n + 1);
+                }
             }
         }
+        in1.close();
         
+        
+        // second pass to actually convert the assembly code to machine code
         while ((inst = in.readLine()) != null) {
-            Parser parser = new Parser(inst);
+            Parser parser = new Parser(inst, st);
             if (parser.isInstruction()) {
                 // convert it into binary
                 inst = parser.binary();
