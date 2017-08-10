@@ -15,6 +15,7 @@ public class Parser {
     public Parser(String inst, Symbol !!!) {
         // saves the instruction without any white spaces
         this.instruction = inst.replaceAll(" ", "");
+        !!!
     }
     
     // check if it's an instruction(not white space or comment)
@@ -62,8 +63,9 @@ public class Parser {
         String a;
         String ainst = instruction.split("@")[0];
         
-        // if it is a Symbol
-        if (ainst.chars().allMatch(Character::isLetter)) {
+        // if it is a Symbol then get its address
+        // checks if it is not all digits, if true convert the symbol
+        if (!ainst.chars().allMatch(Character::isDigit)) {
             ainst = Symbol.read(ainst);
         }
         
