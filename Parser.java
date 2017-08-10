@@ -12,10 +12,10 @@ public class Parser {
     public Code code = new Code();
     
     // Initializes with an instruction 
-    public Parser(String inst, Symbol !!!) {
+    public Parser(String inst, Symbol sym) {
         // saves the instruction without any white spaces
         this.instruction = inst.replaceAll(" ", "");
-        !!!
+        this.st = sym;
     }
     
     // check if it's an instruction(not white space or comment)
@@ -49,10 +49,13 @@ public class Parser {
     public String binary() {
         if (instruction[0] == "@") {
             // then its an A-instruction
+            // eg '@10'
             return aInstruction();
         }
         else {
             // C-instruction
+            // 'D = M - 1'
+            return "111" + comp() + dest() + jump();
         }
     }
     
@@ -65,10 +68,10 @@ public class Parser {
         // if it is a Symbol then get its address
         // checks if it is not all digits, if true convert the symbol
         if (!ainst.chars().allMatch(Character::isDigit)) {
-            ainst = Symbol.read(ainst);
+            ainst = st.read(ainst);
         }
         
-        return code.aInstruction(ainst);
+        return "0" + code.aInstruction(ainst);
     }
     
     // return comp field
