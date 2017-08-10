@@ -72,13 +72,25 @@ public class Parser {
     }
     
     // return comp field
+    // dest=comp;jump
     public String comp() {
-        
+        String co;
+        if (instruction.contains("=")) {
+            co = instruction.split("=")[1];
+            if (co.contains(";") {
+                co = co.split(";")[0];
+            }
+        }
+        else if (instruction.contains(";")) {
+            co = instruction.split(";")[0];
+        }
+        return code.comp(co);
     }
     
     // return dest field
+    // dest=comp;jump
     public String dest() {
-        if(instruction.contains("=")) {
+        if (instruction.contains("=")) {
             String de = instruction.split("=")[0];
             return code.dest(de);
         }
@@ -86,8 +98,9 @@ public class Parser {
     }
     
     // return jump field
+    // dest=comp;jump
     public String jump() {
-        if(instruction.contains(";")) {
+        if (instruction.contains(";")) {
             String ju = instruction.split(";")[1];
             return code.jump(ju);
         }
