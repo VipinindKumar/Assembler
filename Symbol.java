@@ -5,6 +5,10 @@
  * -method add() use to add more symbols into the table
  * -method read() to check the value for a particular key
  * 
+ * Symbol class makes a symbol table filled with predefined symbols 
+ * of the assembly language. and 
+ * provides methods to add a variable and Label(with next instruction number)
+ * and read(String) method to read from symbol table
  **/
  import java.util.HashMap;
  
