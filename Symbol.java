@@ -2,8 +2,8 @@
  * 
  * -first add all the pre-defined symbols into 
  *  a symbol table
- * -methd add() use to add more symbols into the table
- * -method to check the value for a particular key
+ * -method add() use to add more symbols into the table
+ * -method read() to check the value for a particular key
  * 
  **/
  import java.util.HashMap;

@@ -1,4 +1,4 @@
-/** An Assembler for the Hack computer(16bit computer in Nand2Tetris course).
+/** An Assembler for the Hack computer(16bit computer for Nand2Tetris course).
  * 
  * Handle I/O files,
  * Open the file provided in arguments

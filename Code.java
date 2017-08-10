@@ -4,6 +4,12 @@
  * as arguments and returns the correspoinding binary code
  * for that field
  * 
+ * 
+ * Code(): creates table with predeined conversions for comp, dest and jump
+ * 
+ * Can get corresponding binary value for different part of instructions
+ * using comp(String), dest(String), jump(String) and aInstruction(String)
+ * with there corresponding part from an assembly language instruction
  **/
  import java.util.HashMap;
  

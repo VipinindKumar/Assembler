@@ -12,7 +12,8 @@ public class Parser {
     public Code code = new Code();
     
     // Initializes with an instruction 
-    public Parser(String inst) {
+    public Parser(String inst, Symbol !!!) {
+        // saves the instruction without any white spaces
         this.instruction = inst.replaceAll(" ", "");
     }
     
@@ -28,21 +29,26 @@ public class Parser {
     
     // check if the instruction is a Label
     public boolean isLabel() {
-        //String label = instruction.trim().split("(")[0].split(")")[0];
-        if (instruction.trim()[0] == "(") {
+        if (instruction[0] == "(") {
             return true;
         }
         return false;
     }
     
+    // returns label from the instruction
+    public String label(){
+        lbl = instruction.split("(")[0];
+        lbl = lbl.split(")")[0];
+        return lbl;
+    }
+    
+    
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // convert the instruction into it's corresponding binary code
     public String binary() {
         if (instruction[0] == "@") {
             // then its an A-instruction
             return aInstruction();
-        }
-        else if (instruction[0] == "(") {
-            // Label
         }
         else {
             // C-instruction
