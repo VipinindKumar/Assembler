@@ -10,10 +10,10 @@
  * provides methods to add a variable and Label(with next instruction number)
  * and read(String) method to read from symbol table
  **/
- import java.util.HashMap;
+ import java.util.*;
  
 public class Symbol {
-    public Map s = new HashMap();
+    public HashMap<String, String> s = new HashMap();
     private int n = 16;
     
     public Symbol() {
@@ -51,17 +51,17 @@ public class Symbol {
     // add the label, 
     // @param label name and next instruction number (when in memory)
     public void addLabel(String label, int nextInst) {
-        s.put(label, String.valueOf(nextInst))
+        s.put(label, String.valueOf(nextInst));
     }
     
     // translate a symbol into memory address
     // if symbol is not present add it and 
     // then return memory address
-    public String read(String symbol) {
-        String sym = s.get(symbol);
+    public String read(String symb) {
+        String sym = s.get(symb);
         if (sym == null) {
-            addvar(symbol);
-            sym = s.get(symbol);
+            addvar(symb);
+            sym = s.get(symb);
         }
         return sym;
     }

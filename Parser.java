@@ -22,7 +22,7 @@ public class Parser {
     public boolean isInstruction() {
         if (instruction == null || instruction.isEmpty())
             return false;
-        else if (instruction[0] == "/" && instruction[1] == "/")
+        else if (instruction.charAt(0) == '/' && instruction.charAt(1) == '/')
             return false;
         else 
             return true;
@@ -30,7 +30,7 @@ public class Parser {
     
     // check if the instruction is a Label
     public boolean isLabel() {
-        if (instruction[0] == "(") {
+        if (instruction.charAt(0) == '(') {
             return true;
         }
         return false;
@@ -38,7 +38,7 @@ public class Parser {
     
     // returns label from the instruction
     public String label(){
-        lbl = instruction.split("(")[0];
+        String lbl = instruction.split("(")[0];
         lbl = lbl.split(")")[0];
         return lbl;
     }
@@ -47,7 +47,7 @@ public class Parser {
     // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // convert the instruction into it's corresponding binary code
     public String binary() {
-        if (instruction[0] == "@") {
+        if (instruction.charAt(0) == '@') {
             // then its an A-instruction
             // eg '@10'
             return aInstruction();
@@ -77,10 +77,10 @@ public class Parser {
     // return comp field
     // dest=comp;jump
     public String comp() {
-        String co;
+        String co = instruction;
         if (instruction.contains("=")) {
             co = instruction.split("=")[1];
-            if (co.contains(";") {
+            if (co.contains(";")) {
                 co = co.split(";")[0];
             }
         }

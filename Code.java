@@ -11,12 +11,13 @@
  * using comp(String), dest(String), jump(String) and aInstruction(String)
  * with there corresponding part from an assembly language instruction
  **/
- import java.util.HashMap;
+ import java.util.*;
+ java.lang.NullPointerException;
  
 public class Code {
-    public Map c = new HashMap();
-    public Map d = new HashMap();
-    public Map j = new HashMap();
+    public HashMap<String, String> c = new HashMap();
+    public HashMap<String, String> d = new HashMap();
+    public HashMap<String, String> j = new HashMap();
     
     public Code() {
         // comp table
@@ -81,12 +82,12 @@ public class Code {
      * it returns "000" 
      */
     public String dest(String dest) {
-        if (dest == null) return "000"
+        if (dest == null) return "000";
         return d.get(dest);
     }
     
     public String jump(String jump) {
-        if (jump == null) return "000"
+        if (jump == null) return "000";
         return j.get(jump);
     }
     
