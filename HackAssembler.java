@@ -15,13 +15,7 @@ public class HackAssembler {
     // convert it into binary
     // write it into output file
     public static void main(String[] args) {
-        // read the file
-        BufferedReader in = new BufferedReader(new FileReader(new File(args[0])));
 		
-        // write it into output file
-        String outfile = args[0].split(".")[0] + ".hack";
-        BufferedWriter out = new BufferedWriter(new FileWriter(new File(outfile)));
-        
         // in a loop read an instruction
         String inst;
         
@@ -43,6 +37,14 @@ public class HackAssembler {
         
         
         // second pass to actually convert the assembly code to machine code
+        // read the file
+        BufferedReader in = new BufferedReader(new FileReader(new File(args[0])));
+        
+        // write it into output file
+        String outfile = args[0].split(".")[0] + ".hack";
+        BufferedWriter out = new BufferedWriter(new FileWriter(new File(outfile)));
+        
+        // read the instructions
         while ((inst = in.readLine()) != null) {
             Parser parser = new Parser(inst, st);
             if (parser.isInstruction()) {
