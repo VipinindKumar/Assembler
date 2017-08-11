@@ -13,7 +13,7 @@
  import java.util.*;
  
 public class Symbol {
-    public HashMap<String, String> s = new HashMap();
+    public HashMap<String, String> s = new HashMap<String, String>();
     private int n = 16;
     
     public Symbol() {

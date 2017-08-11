@@ -12,12 +12,12 @@
  * with there corresponding part from an assembly language instruction
  **/
  import java.util.*;
- java.lang.NullPointerException;
+ import java.lang.NullPointerException;
  
 public class Code {
-    public HashMap<String, String> c = new HashMap();
-    public HashMap<String, String> d = new HashMap();
-    public HashMap<String, String> j = new HashMap();
+    public HashMap<String, String> c = new HashMap<String, String>();
+    public HashMap<String, String> d = new HashMap<String, String>();
+    public HashMap<String, String> j = new HashMap<String, String>();
     
     public Code() {
         // comp table
@@ -74,7 +74,7 @@ public class Code {
      * is not correct
      */
     public String comp(String comp) {
-        if (comp == null) throw NullPointerException();
+        if (comp == null) throw new NullPointerException();
         return c.get(comp);
     }
     
