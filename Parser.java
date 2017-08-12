@@ -43,8 +43,8 @@ public class Parser {
     
     // returns label from the instruction
     public String label(){
-        String lbl = instruction.split("(")[1];
-        lbl = lbl.split(")")[0];
+        String lbl = instruction.split("\\(")[1];
+        lbl = lbl.split("\\)")[0];
         return lbl;
     }
     
