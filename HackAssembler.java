@@ -29,7 +29,7 @@ public class HackAssembler {
                 Parser parser = new Parser(inst, st);
                 if (parser.isInstruction()) {
                     if (parser.isLabel()) {
-                        st.addLabel(parser.label(), n);
+                    	st.addLabel(parser.label(), n);
                         n--;
                     }
                     n++;
@@ -58,7 +58,7 @@ public class HackAssembler {
                     if (parser.isLabel()) {
                     	continue;
                     }
-                    // convert it into binary
+                	// convert it into binary
                     inst = parser.binary();
                     // write it into output file
                     out.write(inst);
