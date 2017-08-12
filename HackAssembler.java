@@ -28,11 +28,11 @@ public class HackAssembler {
             while ((inst = in1.readLine()) != null) {
                 Parser parser = new Parser(inst, st);
                 if (parser.isInstruction()) {
-                    n++;
                     if (parser.isLabel()) {
                         st.addLabel(parser.label(), n);
                         n--;
                     }
+                    n++;
                 }
             }
             in1.close();
