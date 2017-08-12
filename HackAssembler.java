@@ -30,8 +30,8 @@ public class HackAssembler {
                 if (parser.isInstruction()) {
                     n++;
                     if (parser.isLabel()) {
-                        n--;
                         st.addLabel(parser.label(), n);
+                        n--;
                     }
                 }
             }
