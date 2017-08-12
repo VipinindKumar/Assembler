@@ -15,6 +15,11 @@ public class Parser {
     public Parser(String inst, Symbol sym) {
         // saves the instruction without any white spaces
         this.instruction = inst.replaceAll(" ", "");
+        
+        // to filter out end of line comments
+        if (instruction.contains("//")) {
+            this.instruction = instruction.split("//")[0];
+        }
         this.st = sym;
     }
     
@@ -38,7 +43,7 @@ public class Parser {
     
     // returns label from the instruction
     public String label(){
-        String lbl = instruction.split("(")[0];
+        String lbl = instruction.split("(")[1];
         lbl = lbl.split(")")[0];
         return lbl;
     }
@@ -63,7 +68,7 @@ public class Parser {
     // convert symbols into corresponding number
     // boolean a = ainst.chars().allMatch(Character::isLetter);
     public String aInstruction() {
-        String ainst = instruction.split("@")[0];
+        String ainst = instruction.split("@")[1];
         
         // if it is a Symbol then get its address
         // checks if it is not all digits, if true convert the symbol
