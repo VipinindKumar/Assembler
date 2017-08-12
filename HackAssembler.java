@@ -55,6 +55,9 @@ public class HackAssembler {
             while ((inst = in.readLine()) != null) {
                 Parser parser = new Parser(inst, st);
                 if (parser.isInstruction()) {
+                    if (parser.isLabel()) {
+                    	continue;
+                    }
                     // convert it into binary
                     inst = parser.binary();
                     // write it into output file
