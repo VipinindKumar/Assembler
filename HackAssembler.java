@@ -1,5 +1,9 @@
 /** An Assembler for the Hack computer(16bit computer for Nand2Tetris course).
  * 
+ * Usage: java HackAssembler <file-name>
+ * 
+ * Dependicies: Parser.java, Code.java, Symbol.java
+ * 
  * Handle I/O files,
  * Open the file provided in arguments
  * read a instruction
